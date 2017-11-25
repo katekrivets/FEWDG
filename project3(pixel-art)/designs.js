@@ -24,9 +24,9 @@ $("#sizePicker").submit(function makeGrid(event) {
 });
 
   /* COLOR PICKER - PAINTER */
-  var color = $("#colorPicker").val();
-  $('#pixel_canvas').on('click','td', function (color) {
 
+  $('#pixel_canvas').on('click','td', function (color) {
+var color = $("#colorPicker").val();
     console.log(color);
     $(this).attr('style', 'background:'+ color );
 
