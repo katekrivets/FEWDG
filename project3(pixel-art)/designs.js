@@ -1,13 +1,13 @@
-$(function() {
-
+$( function() {
+var height, width, color;
 /* Making Grid */
 
 $("#sizePicker").submit(function makeGrid(event) {
   //https://api.jquery.com/submit/
   event.preventDefault();
   //variables are picked after pressing the submit button
-  var height = $("#input_height").val();
-  var width = $("#input_width").val();
+  height = $("#input_height").val();
+  width = $("#input_width").val();
   //everytime we press submit button the table is removed
   //and generated again with new variables
   $('#pixel_canvas').children().remove();
@@ -24,8 +24,17 @@ $("#sizePicker").submit(function makeGrid(event) {
   /* COLOR PICKER - PAINTER */
 
   $('#pixel_canvas').on('click','td', function (color) {
-    var color = $("#colorPicker").val();
+    color = $("#colorPicker").val();
     $(this).attr('style', 'background:'+ color );
 
    });
+/*clear canvas*/
+   $("#eraseColor").on('click', function (){
+      $('td').removeAttr('style');
+   });
+/*remove canvas*/
+   $("#clearButton").on('click', function (){
+      $('#pixel_canvas').children().remove();
+   });
+
 })
