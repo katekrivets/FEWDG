@@ -19,18 +19,13 @@ $("#sizePicker").submit(function makeGrid(event) {
        $('#pixel_canvas').children().last().append('<td class="cell"></td>');
       }
     }
-
-
 });
 
   /* COLOR PICKER - PAINTER */
 
   $('#pixel_canvas').on('click','td', function (color) {
-var color = $("#colorPicker").val();
-    console.log(color);
+    var color = $("#colorPicker").val();
     $(this).attr('style', 'background:'+ color );
 
    });
-
-
-});
+})
